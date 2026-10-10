@@ -22,10 +22,41 @@
             let d = document.getElementById("eva").value;
             let totalmarks = document.getElementById("total").value;
             document.getElementById("total").innerHTML = "Your total mark is " + String(Number(c) + Number(d) + Number(a) + Number(b));      
+            let grade;    
         }
-    if (total = 0) {
+    if (totalmarks < 4) {
+        grade = "U"
+        needed = 4 - totalmarks
+    } else if (totalmarks < 13) {
+        grade = "G"
+        needed = 13 - totalmarks
+    } else if (totalmarks < 22) {
+        grade = "F"
+        needed = 22 - totalmarks
+    } else if (totalmarks < 31) {
+        grade = "E"
+        needed = 31 - totalmarks
+    } else if (totalmarks < 41) {
+        grade = "D"
+        needed = 41 - totalmarks
+    } else if (totalmarks < 54) {
+        grade = "C"
+        needed = 54 - totalmarks
+    } else if (totalmarks < 67) {
+        grade = "B"
+        needed = 67 - totalmarks
+    } else if (totalmarks < 80) {
+        grade = "A"
+        needed = 80 - totalmarks;
+    } else {
+        grade = "A*";
+        needed = 0;
 
     }
+
+    document.getElementById("total").innerHTML = "Your total mark is " + String(Number(c) + Number(d) + Number(a) + Number(b)) + "<br>" + "Your grade is " + grade + "<br>" + "You need " + needed + " more marks to get the next grade";
+
+    </script>
     </script>
 
 </body>
